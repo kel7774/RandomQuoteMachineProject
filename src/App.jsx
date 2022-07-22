@@ -11,25 +11,33 @@ function App() {
     fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json')
     .then((response) => {
         return response.json();
-      }).then((json) => {
+      }).then((response) => {
         setIsLoaded(true);
-        setQuotes(json);
+        setQuotes(response);
       }).catch((e) => {
         setError(e);
-      })
-  }, []);
+      });
+  }, [quotes]);
 
-  console.log(quotes);
+  const id = Math.floor(Math.random() * 101);
+
+  const handleClick = () => {
+    setQuotes(quotes[id])
+  }
+
+
   return (
     !isLoaded ? <div>Loading</div> :
     <div className="App">
-      {quotes.quotes.map(quote => (
+      {
+        quotes.quotes[id] && (
           <Quote
-            author={quote.author}
-            quote={quote.quote}
+            quote={quotes.quotes.quote}
+            author={quotes.quotes.author}
+            handleClick={handleClick}
           />
-      ))}
-     <p id="author"></p>
+        )
+      }
     </div>
   )
 }
