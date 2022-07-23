@@ -1,13 +1,12 @@
 import React from 'react'
 import './App.css'
+import 'animate.css'
 import Quote from './components/Quote'
-
-// const id = Math.floor(Math.random() * 101);
 
 function App() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [quotes, setQuotes] = React.useState([]);
-  const [id, setId] = React.useState(Math.floor(Math.random() * 101));
+  const [index, setIndex] = React.useState(0);
   const [, setError] = React.useState(null);
 
   React.useEffect(() => {
@@ -23,16 +22,16 @@ function App() {
   }, []);
 
   const handleClick = () => {
-    setId(id);
-    setQuotes(quotes[id]);
+    let newIndex = Math.floor(Math.random() * 101);
+    setIndex(newIndex);
   }
 
   return (
     !isLoaded ? <div>Loading</div> :
     <div className="App">
       <Quote
-        quote={quotes[id].quote}
-        author={quotes[id].author}
+        quote={quotes[index].quote}
+        author={quotes[index].author}
         handleClick={handleClick}
       />
     </div>
