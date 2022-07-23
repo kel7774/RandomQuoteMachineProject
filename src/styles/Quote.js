@@ -5,8 +5,8 @@ const QuoteWrapper = styled.div`
   color: black;
   width: 40em;
   height: 20em;
-  box-shadow: 0px 0px 10px 10px black;
-  border-radius: 5%;
+  border-radius: 10px;
+  box-shadow: 7px 7px black;
   padding: 0 3em;
   display: flex;
   flex-direction: column;
