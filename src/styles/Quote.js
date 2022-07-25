@@ -12,6 +12,12 @@ const QuoteWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+    p {
+      font-size: 25px;
+    }
+    button {
+      text-transform: uppercase;
+    }
 `;
 
 export default QuoteWrapper;
