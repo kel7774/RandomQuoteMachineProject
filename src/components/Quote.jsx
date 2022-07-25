@@ -4,11 +4,11 @@ import QuoteWrapper from '../styles/Quote';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft, faQuoteRight} from '@fortawesome/free-solid-svg-icons'
 
-function Quote({quote, author, handleClick}) {
+function Quote({quote, author, handleClick, color}) {
   return (
     <QuoteWrapper id="quote-box">
       <div className="text-wrapper">
-        <p className="animate__animated animate__fadeIn" id="text">
+        <p className="animate__animated animate__fadeIn" id="text" style={{color: color}}>
           <span><FontAwesomeIcon icon={faQuoteLeft}/></span>
             {quote}
           <span><FontAwesomeIcon icon={faQuoteRight}/></span>
