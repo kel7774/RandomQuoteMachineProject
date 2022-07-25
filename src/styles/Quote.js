@@ -14,6 +14,12 @@ const QuoteWrapper = styled.div`
   align-items: center;
     p {
       font-size: 25px;
+        span:first-child {
+          padding-right: 0.5em;
+        }
+        span:nth-child(2) {
+          padding-left: 0.5em;
+        }
     }
     button {
       text-transform: uppercase;
